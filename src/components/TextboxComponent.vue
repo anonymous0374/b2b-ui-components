@@ -5,21 +5,21 @@
 <script>
 module.exports = {
   name: 'b2b-textbox',
-  text: '请输入文字',
+  text: 'Please input here',
   data: function () {
     return {
-      text: '请输入文字'
+      text: 'Please input here'
     }
   },
   methods: {
     focus: function () {
-      if (this.text === '请输入文字') {
+      if (this.text === 'Please input here') {
         this.text = ''
       }
     },
     blur: function () {
       if (this.text === '') {
-        this.text = '请输入文字'
+        this.text = 'Please input here'
       }
     }
   }
@@ -28,8 +28,8 @@ module.exports = {
 
 <style scoped>
 	.b2b-textbox {
-		width: 190px;
-		height: 30px;
+		width: 188px;
+		height: 26px;
 		border: 1px solid #CCCCCC;
 		padding-left: 1em;
 		border-radius: 3px;
