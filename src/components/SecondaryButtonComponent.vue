@@ -41,6 +41,7 @@
   border: solid 1px #82A7FF;
   width: 90px;
   height: 30px;
+  border-radius: 2px;
 }
 
 .b2b-secondary-button.enabled {

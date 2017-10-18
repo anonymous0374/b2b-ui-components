@@ -41,6 +41,7 @@
   border: none;
   width: 90px;
   height: 30px;
+  border-radius: 2px;
 }
 
 .b2b-button.disabled {
