@@ -27,7 +27,7 @@
 .b2b-button:hover {background-color: #5D7AFF}
 
 .b2b-button:active {
-  background-color: #3e8e41;  
+  background-color: #5D7AFF;
   transform: translateY(2px);
 }
 </style>

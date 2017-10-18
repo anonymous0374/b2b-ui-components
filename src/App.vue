@@ -3,14 +3,17 @@
     <img src="./assets/transfar-chemistry.png">
     <router-view/>
     <b2b-button></b2b-button>
+    <b2b-secondary-button></b2b-secondary-button>
   </div>
 </template>
 
 <script>
   import ButtonComponent from '@/components/ButtonComponent'
+  import SecondaryButtonComponent from '@/components/SecondaryButtonComponent'
   export default {
     components: {
-      'b2b-button': ButtonComponent
+      'b2b-button': ButtonComponent,
+      'b2b-secondary-button': SecondaryButtonComponent
     }
   }
 </script>
