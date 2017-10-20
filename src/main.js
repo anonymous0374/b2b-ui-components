@@ -16,5 +16,15 @@ new Vue({
   components: {
     App,
     'b2b-button': ButtonComponent
+  },
+  data: function () {
+    return {
+      'button_main_attr': {
+        value: 'normal'
+      },
+      'button_secondary_attr': {
+        value: 'secondary'
+      }
+    }
   }
 })

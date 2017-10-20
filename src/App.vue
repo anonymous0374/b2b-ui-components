@@ -4,13 +4,13 @@
     <router-view/>
     <div>
       <h4>Buttons</h4>
-      <b2b-button></b2b-button>       
-      <b2b-secondary-button></b2b-secondary-button>
+      <b2b-button :button_attr="btn1_attr" v-on:clicked='btn1_toggleStatus'></b2b-button>
+      <b2b-secondary-button :button_attr="btn2_attr" v-on:clicked='btn2_toggleStatus'></b2b-secondary-button>
       <br>
     </div>
     <div>
       <h4>Input Textboxes</h4>
-      <b2b-textbox></b2b-textbox>
+      <b2b-textbox></b2b-textbox>      
       <br>
     </div>
     <div>
@@ -33,6 +33,30 @@
       'b2b-secondary-button': SecondaryButtonComponent,
       'b2b-textbox': TextboxComponent,
       'b2b-select': SelectComponent
+    },
+    data: function () {
+      return {
+        btn1_attr: {
+          type: Object,
+          value: 'normal',
+          enabled: true
+        },
+        btn2_attr: {
+          type: Object,
+          value: 'secondary',
+          enabled: true
+        }
+      }
+    },
+    methods: {
+      btn1_toggleStatus () {
+        this.btn1_attr.enabled = !this.btn1_attr.enabled
+        console.log(`I togglled button status`)
+      },
+      btn2_toggleStatus () {
+        this.btn2_attr.enabled = !this.btn2_attr.enabled
+        console.log(`I togglled button status`)
+      }
     }
   }
 </script>

@@ -1,11 +1,12 @@
 <template>
-  <button class='b2b-button' v-bind:class='{ enabled: enabled, disabled: !enabled }' v-on:click='toggleButtonStatus'>normal button</button>  
+  <button class='b2b-button' v-bind:class='{ enabled: button_attr.enabled, disabled: !button_attr.enabled }' v-on:click='clicked'>{{ button_attr.value }}</button>  
 </template>
 
 <script>
   export default {
     name: 'b2b-button',
     enabled: true,
+    props: ['button_attr'],
     data: function () {
       return {
         enabled: true
@@ -18,13 +19,9 @@
       enable: function () {
         this.enable = true
       },
-      toggleButtonStatus: function () {
-        if (!this.enabled) {
-          return false
-        } else {
-          this.enabled = false
-          return false
-        }
+      clicked: function () {
+        // emmit this event
+        this.$emit('clicked')
       }
     }
   }
