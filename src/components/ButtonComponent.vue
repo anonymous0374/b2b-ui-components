@@ -1,5 +1,5 @@
 <template>
-  <button class='b2b-button' v-bind:class='{ enabled: button_attr.enabled, disabled: !button_attr.enabled }' v-on:click='clicked'>{{ button_attr.value }}</button>  
+  <button class='b2b-button' v-bind:class='{ enabled: button_attr.enabled, disabled: !button_attr.enabled }' v-on:click='clicked'>{{ button_attr.value }}</button>
 </template>
 
 <script>
@@ -19,9 +19,9 @@
       enable: function () {
         this.enable = true
       },
-      clicked: function () {
-        // emmit this event
-        this.$emit('clicked')
+      clicked: function ($event) {
+        // emmit this event with additional data
+        this.$emit('clicked', $event, this.button_attr)
       }
     }
   }

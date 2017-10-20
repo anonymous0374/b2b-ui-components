@@ -10,7 +10,8 @@
     </div>
     <div>
       <h4>Input Textboxes</h4>
-      <b2b-textbox></b2b-textbox>      
+      <b2b-textbox></b2b-textbox>
+      <b2b-button :button_attr="{value: 'disable', enabled: true}" v-on:clicked='btn3_clicked($event)'></b2b-button>
       <br>
     </div>
     <div>
@@ -37,25 +38,28 @@
     data: function () {
       return {
         btn1_attr: {
-          type: Object,
           value: 'normal',
           enabled: true
         },
         btn2_attr: {
-          type: Object,
           value: 'secondary',
+          enabled: true
+        },
+        btn3_attr: {
+          value: 'disable',
           enabled: true
         }
       }
     },
     methods: {
-      btn1_toggleStatus () {
+      btn1_toggleStatus (event, data) {
         this.btn1_attr.enabled = !this.btn1_attr.enabled
-        console.log(`I togglled button status`)
       },
       btn2_toggleStatus () {
         this.btn2_attr.enabled = !this.btn2_attr.enabled
-        console.log(`I togglled button status`)
+      },
+      btn3_clicked (e) {
+        console.log(e)
       }
     }
   }
