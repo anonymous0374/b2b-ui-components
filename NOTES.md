@@ -77,24 +77,24 @@ details
     (5) a component accepts data from OUTSIDE(from other components maybe). This REQUIRES another parent components providing data(which may again come from another accestor)
     -- parent component(provides an object from its data property):
     <template>
-      <child-component v-bind:attr="key"></child-component>
+      <child-component v-bind:comp_attr="random_data"></child-component>
     </template>
     <script>
       moudle.exports = {
         data: function () { // pay attention here: parent provides data to child-component through data property, NOT props property(props should come from parent's parent, which DOES NOT exist)
           return {
-            key: "the-data-could-be-used-by-child-component-as-attr"
+            random_data: "some data hold by parent component, it could be provided to the child-component, but not necessarily so"
           }
         }
       }
     </script>
     -- child component(accepts data and bind it to its attr property inside):
     <template>
-      <input type='text' v-bind:value="attr" /><!--there are 4 names involved in this binding process: in parent, there are two: (1)attr and (2)key, in child there are two: (3)value and (4)attr-->
+      <input type='text' v-bind:value="comp_attr" />
     </template>
     <script>
       module.exports = {
-        props: ['attr']
+        props: ['comp_attr']
       }
     </script>
 

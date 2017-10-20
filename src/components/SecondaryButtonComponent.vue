@@ -1,28 +1,20 @@
 <template>
-  <button class='b2b-secondary-button' v-bind:class='{ enabled: button_attr.enabled, disabled: !button_attr.enabled }' v-on:click='clicked(this)'>{{ button_attr.value }}</button>
+  <button class='b2b-secondary-button' v-bind:class='{ enabled: button_attr.enabled, disabled: !button_attr.enabled }' v-on:click='clicked'>{{ button_attr.value }}</button>
 </template>
 
 <script>
   export default {
     name: 'b2b-secondary-button',
-    enabled: true,
     props: ['button_attr'],
-    data: function () {
-      return {
-        enabled: true
-      }
-    },
     methods: {
       disable: function () {
-        this.enabled = false
+        this.button_attr.enabled = false
       },
       enable: function () {
-        this.enable = true
+        this.button_attr.enable = true
       },
-      clicked: function (el) {
-        // emmit this event
-        console.log(el)
-        this.$emit('clicked')
+      clicked: function ($event) {
+        this.$emit('clicked', $event, this.button_attr)
       }
     }
   }

@@ -5,19 +5,13 @@
 <script>
   export default {
     name: 'b2b-button',
-    enabled: true,
     props: ['button_attr'],
-    data: function () {
-      return {
-        enabled: true
-      }
-    },
     methods: {
       disable: function () {
-        this.enabled = false
+        this.button_attr.enabled = false
       },
       enable: function () {
-        this.enable = true
+        this.button_attr.enable = true
       },
       clicked: function ($event) {
         // emmit this event with additional data
