@@ -1,5 +1,8 @@
 <template>
-  <h3>Welcome to B2B UI Components Library!</h3>  
+  <div>
+    <h3>Welcome to B2B UI Components Library!</h3>
+    <h5 style='text-align: right;'>by: j-sparrow</h5>
+  </div>
 </template>
 
 <script>

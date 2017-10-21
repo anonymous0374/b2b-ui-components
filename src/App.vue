@@ -17,6 +17,7 @@
     <div>
       <h4>Select</h4>
       <b2b-select :select_attr='select_attr' v-on:change='select_change'></b2b-select>
+      <b2b-button :button_attr="btn4_attr" v-on:clicked='btn4_clicked'></b2b-button>
       <br>
     </div>
   </div>
@@ -38,22 +39,28 @@
     data: function () {
       return {
         btn1_attr: {
-          value: 'normal',
-          enabled: true
+          enabled: true,
+          value: 'normal'
         },
         btn2_attr: {
-          value: 'secondary',
-          enabled: true
+          enabled: true,
+          value: 'secondary'
         },
         btn3_attr: {
-          value: 'disable',
-          enabled: true
+          enabled: true,
+          value: 'disable'
+        },
+        btn4_attr: {
+          enabled: true,
+          value: 'disable'
         },
         txtbox_attr: {
+          disabled: false,
           placeholder: 'Please input here',
           text: ''
         },
         select_attr: {
+          disabled: false,
           value: '待受理',
           options: [{
             name: '全部',
@@ -82,7 +89,12 @@
         this.btn2_attr.enabled = !this.btn2_attr.enabled
       },
       btn3_clicked () {
-        this.btn3_attr.enabled = !this.btn3_attr.enabled
+        this.txtbox_attr.disabled = !this.txtbox_attr.disabled
+        this.txtbox_attr.disabled ? this.btn3_attr.value = 'enable' : this.btn3_attr.value = 'disable'
+      },
+      btn4_clicked () {
+        this.select_attr.disabled = !this.select_attr.disabled
+        this.txtbox_attr.disabled ? this.btn4_attr.value = 'enable' : this.btn4_attr.value = 'disable'
       },
       select_change (e, value) {
         console.log(value)

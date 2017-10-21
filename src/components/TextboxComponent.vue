@@ -1,5 +1,5 @@
 <template>
-  <input type='text' class='b2b-textbox' :placeholder="txtbox_attr.placeholder" v-model="txtbox_attr.text" v-on:focus="focus" v-on:blur="blur" />
+  <input type='text' class='b2b-textbox' :placeholder="txtbox_attr.placeholder" v-bind:disabled='txtbox_attr.disabled' v-model="txtbox_attr.text" v-on:focus="focus" v-on:blur="blur" />
 </template>
 
 <script>
