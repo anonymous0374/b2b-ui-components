@@ -10,7 +10,6 @@ module.exports = {
     focus: function () {
     },
     blur: function ($event) {
-      console.log(`text: ${this.txtbox_attr.text}`)
       this.$emit('blur', $event, this.txtbox_attr)
     }
   }

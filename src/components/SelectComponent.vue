@@ -1,5 +1,5 @@
 <template>
-	<select class='b2b-select' v-on:change='select' v-model='select_attr.value' v-bind:disabled='select_attr.disabled'><option v-for="opt in select_attr.options" v-bind:value='opt.value'>{{ opt.name }}</option></select>
+	<select class='b2b-select' v-on:change='select' v-model='select_attr.value' v-bind:disabled='select_attr.disabled'><option v-for="opt in select_attr.options" :key='opt.value' v-bind:value='opt.value'>{{ opt.name }}</option></select>
 </template>
 
 <script>

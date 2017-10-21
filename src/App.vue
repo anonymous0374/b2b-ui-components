@@ -20,6 +20,11 @@
       <b2b-button :button_attr="btn4_attr" v-on:clicked='btn4_clicked'></b2b-button>
       <br>
     </div>
+    <div>
+      <h4>Pagination</h4>
+      <b2b-pagination :pages_attr='pages_attr'></b2b-pagination>
+      <br>
+    </div>
   </div>
 </template>
 
@@ -28,13 +33,15 @@
   import SecondaryButtonComponent from '@/components/SecondaryButtonComponent'
   import TextboxComponent from '@/components/TextboxComponent'
   import SelectComponent from '@/components/SelectComponent'
+  import PaginationComponent from '@/components/PaginationComponent'
 
   export default {
     components: {
       'b2b-button': ButtonComponent,
       'b2b-secondary-button': SecondaryButtonComponent,
       'b2b-textbox': TextboxComponent,
-      'b2b-select': SelectComponent
+      'b2b-select': SelectComponent,
+      'b2b-pagination': PaginationComponent
     },
     data: function () {
       return {
@@ -61,23 +68,27 @@
         },
         select_attr: {
           disabled: false,
-          value: '待受理',
+          value: '1',
           options: [{
             name: '全部',
-            value: '全部'
+            value: 0
           }, {
             name: '待受理',
-            value: '待受理'
+            value: 1
           }, {
             name: '已取消',
-            value: '已取消'
+            value: 2
           }, {
             name: '已拒绝',
-            value: '1'
+            value: 3
           }, {
             name: '已完成',
-            value: '已完成'
+            value: 4
           }]
+        },
+        pages_attr: {
+          pages_displayed: 3,
+          total: 5
         }
       }
     },
