@@ -1,30 +1,13 @@
 <template>
-	<select class='b2b-select'><option v-for="opt in options">{{ opt.name }}</option></select>
+	<select class='b2b-select'><option v-for="opt in select_attr.options">{{ opt.name }}</option></select>
 </template>
 
 <script>
 module.exports = {
   name: 'b2b-select',
+  props: ['select_attr'],
   data: function () {
-    return {
-      options:
-      [{
-        name: '全部',
-        value: '全部'
-      }, {
-        name: '待受理',
-        value: '待受理'
-      }, {
-        name: '已取消',
-        value: '已取消'
-      }, {
-        name: '已拒绝',
-        value: '已拒绝'
-      }, {
-        name: '已完成',
-        value: '已完成'
-      }]
-    }
+    return {}
   }
 }
 </script>

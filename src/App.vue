@@ -10,13 +10,13 @@
     </div>
     <div>
       <h4>Input Textboxes</h4>
-      <b2b-textbox></b2b-textbox>
+      <b2b-textbox :txtbox_attr='txtbox_attr'></b2b-textbox>
       <b2b-button :button_attr="btn3_attr" v-on:clicked='btn3_clicked'></b2b-button>
       <br>
     </div>
     <div>
       <h4>Select</h4>
-      <b2b-select></b2b-select>
+      <b2b-select :select_attr='select_attr'></b2b-select>
       <br>
     </div>
   </div>
@@ -48,6 +48,28 @@
         btn3_attr: {
           value: 'disable',
           enabled: true
+        },
+        txtbox_attr: {
+          placeholder: 'Please input here',
+          text: ''
+        },
+        select_attr: {
+          options: [{
+            name: '全部',
+            value: '全部'
+          }, {
+            name: '待受理',
+            value: '待受理'
+          }, {
+            name: '已取消',
+            value: '已取消'
+          }, {
+            name: '已拒绝',
+            value: '已拒绝'
+          }, {
+            name: '已完成',
+            value: '已完成'
+          }]
         }
       }
     },

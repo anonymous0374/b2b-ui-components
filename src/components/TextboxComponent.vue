@@ -1,26 +1,15 @@
 <template>
-  <input type='text' class='b2b-textbox' v-bind:value="text" v-on:focus="focus" v-on:blur="blur" />
+  <input type='text' class='b2b-textbox' :placeholder="txtbox_attr.placeholder" v-bind:value="txtbox_attr.text" v-on:focus="focus" v-on:blur="blur" />
 </template>
 
 <script>
 module.exports = {
   name: 'b2b-textbox',
-  text: 'Please input here',
-  data: function () {
-    return {
-      text: 'Please input here'
-    }
-  },
+  props: ['txtbox_attr'],
   methods: {
     focus: function () {
-      if (this.text === 'Please input here') {
-        this.text = ''
-      }
     },
     blur: function () {
-      if (this.text === '') {
-        this.text = 'Please input here'
-      }
     }
   }
 }
