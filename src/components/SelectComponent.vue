@@ -1,5 +1,5 @@
 <template>
-	<select class='b2b-select'><option v-for="opt in select_attr.options">{{ opt.name }}</option></select>
+	<select class='b2b-select' v-on:change='select' v-model='select_attr.value'><option v-for="opt in select_attr.options" v-bind:value='opt.value'>{{ opt.name }}</option></select>
 </template>
 
 <script>
@@ -8,6 +8,11 @@ module.exports = {
   props: ['select_attr'],
   data: function () {
     return {}
+  },
+  methods: {
+    select: function ($event) {
+      this.$emit('change', $event, this.select_attr.value)
+    }
   }
 }
 </script>

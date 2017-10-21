@@ -16,7 +16,7 @@
     </div>
     <div>
       <h4>Select</h4>
-      <b2b-select :select_attr='select_attr'></b2b-select>
+      <b2b-select :select_attr='select_attr' v-on:change='select_change'></b2b-select>
       <br>
     </div>
   </div>
@@ -54,6 +54,7 @@
           text: ''
         },
         select_attr: {
+          value: '待受理',
           options: [{
             name: '全部',
             value: '全部'
@@ -65,7 +66,7 @@
             value: '已取消'
           }, {
             name: '已拒绝',
-            value: '已拒绝'
+            value: '1'
           }, {
             name: '已完成',
             value: '已完成'
@@ -82,6 +83,9 @@
       },
       btn3_clicked () {
         this.btn3_attr.enabled = !this.btn3_attr.enabled
+      },
+      select_change (e, value) {
+        console.log(value)
       }
     }
   }

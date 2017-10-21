@@ -1,5 +1,5 @@
 <template>
-  <input type='text' class='b2b-textbox' :placeholder="txtbox_attr.placeholder" v-bind:value="txtbox_attr.text" v-on:focus="focus" v-on:blur="blur" />
+  <input type='text' class='b2b-textbox' :placeholder="txtbox_attr.placeholder" v-model="txtbox_attr.text" v-on:focus="focus" v-on:blur="blur" />
 </template>
 
 <script>
@@ -9,7 +9,9 @@ module.exports = {
   methods: {
     focus: function () {
     },
-    blur: function () {
+    blur: function ($event) {
+      console.log(`text: ${this.txtbox_attr.text}`)
+      this.$emit('blur', $event, this.txtbox_attr)
     }
   }
 }
