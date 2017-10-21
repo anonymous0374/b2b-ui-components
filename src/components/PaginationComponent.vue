@@ -1,7 +1,7 @@
 <template>
   <div class='pagination'>
     <div class='page-mark'><span>&lt;</span></div>
-    <div class='page-mark' :pages_attr='pages_attr' v-for='page in pages_attr.total'>
+    <div class='page-mark' :pages_attr='pages_attr' v-bind:class='{ "page-current": pages_attr.current_page_index === page }' v-on:click='select($event, page)' v-for='page in pages_attr.total' :key='page'>
       <span>{{ page }}</span>
     </div>
     <div class='page-mark'><span>&gt;</span></div>
@@ -15,6 +15,10 @@
       return {}
     },
     methods: {
+      select: function ($event, page) {
+        console.log(`page ${page} selected.`)
+        this.pages_attr.current_page_index = page
+      }
     }
   }
 </script>
@@ -31,4 +35,14 @@
     width: 28px;
     height: 28px;
   }
+
+  .page-mark:active {
+    transform: translateY(2px);
+  }
+
+  .page-current {
+    background-color: #4565F7;
+    color: #FFFFFF;
+  }
+
 </style>

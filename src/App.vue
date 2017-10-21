@@ -88,6 +88,8 @@
         },
         pages_attr: {
           pages_displayed: 3,
+          records_per_page: 10,
+          current_page_index: 2,
           total: 5
         }
       }
