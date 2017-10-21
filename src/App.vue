@@ -1,29 +1,33 @@
 <template>
   <div id="app">
-    <img src="./assets/transfar-chemistry.png">
+    <div class='text-center'><img src="./assets/transfar-chemistry.png"></div>
     <router-view/>
-    <div>
+    <div class='component text-center'>
       <h4>Buttons</h4>
       <b2b-button :button_attr="btn1_attr" v-on:clicked='btn1_toggleStatus'></b2b-button>
       <b2b-secondary-button :button_attr="btn2_attr" v-on:clicked='btn2_toggleStatus'></b2b-secondary-button>
-      <br>
     </div>
-    <div>
+    <div class='component text-center'>
       <h4>Input Textboxes</h4>
       <b2b-textbox :txtbox_attr='txtbox_attr'></b2b-textbox>
-      <b2b-button :button_attr="btn3_attr" v-on:clicked='btn3_clicked'></b2b-button>
-      <br>
+      <b2b-button :button_attr="btn3_attr" v-on:clicked='btn3_clicked'></b2b-button>      
     </div>
-    <div>
+    <div class='component text-center'>
       <h4>Select</h4>
       <b2b-select :select_attr='select_attr' v-on:change='select_change'></b2b-select>
       <b2b-button :button_attr="btn4_attr" v-on:clicked='btn4_clicked'></b2b-button>
       <br>
     </div>
-    <div>
+    <div class='component text-center'>
       <h4>Pagination</h4>
       <b2b-pagination :pages_attr='pages_attr'></b2b-pagination>
       <br>
+    </div>
+    <div class='component'>
+      <h4 class='text-center'>Item Showcase</h4>
+      <div v-for="item in items" class='showcase'>
+        <b2b-item-showcase :item_showcase_attr='item.item_showcase_attr'></b2b-item-showcase>
+      </div>
     </div>
   </div>
 </template>
@@ -34,6 +38,7 @@
   import TextboxComponent from '@/components/TextboxComponent'
   import SelectComponent from '@/components/SelectComponent'
   import PaginationComponent from '@/components/PaginationComponent'
+  import ItemShowcaseComponent from '@/components/ItemShowcaseComponent'
 
   export default {
     components: {
@@ -41,7 +46,8 @@
       'b2b-secondary-button': SecondaryButtonComponent,
       'b2b-textbox': TextboxComponent,
       'b2b-select': SelectComponent,
-      'b2b-pagination': PaginationComponent
+      'b2b-pagination': PaginationComponent,
+      'b2b-item-showcase': ItemShowcaseComponent
     },
     data: function () {
       return {
@@ -91,7 +97,33 @@
           records_per_page: 10,
           current_page_index: 2,
           total: 5
-        }
+        },
+        items: [{item_showcase_attr: {
+          name: 'name1',
+          description: 'some brief description',
+          price: 'price',
+          image_url: require('./assets/items/1.png')
+        }}, {item_showcase_attr: {
+          name: 'name1',
+          description: 'some brief description',
+          price: 'price',
+          image_url: require('./assets/items/2.png')
+        }}, {item_showcase_attr: {
+          name: 'name1',
+          description: 'some brief description',
+          price: 'price',
+          image_url: require('./assets/items/3.jpg')
+        }}, {item_showcase_attr: {
+          name: 'name1',
+          description: 'some brief description',
+          price: 'price',
+          image_url: require('./assets/items/4.jpg')
+        }}, {item_showcase_attr: {
+          name: 'name1',
+          description: 'some brief description',
+          price: 'price',
+          image_url: require('./assets/items/5.jpg')
+        }}]
       }
     },
     methods: {
@@ -121,8 +153,26 @@
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
-  margin-top: 60px;  
+  margin-top: 60px;
+}
+
+.component {
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+  width: 90%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  border: solid 1px #dddddd;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.showcase {
+  display: inline-flex;
 }
 </style>

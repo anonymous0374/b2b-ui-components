@@ -42,7 +42,7 @@
 
 .b2b-button.enabled {
   color: #FFFFFF;
-  background-color: #4565F7;  
+  background-color: #4565F7;
 }
 
 .b2b-button.enabled:hover {background-color: #5D7AFF}

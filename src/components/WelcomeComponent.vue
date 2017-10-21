@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h3>Welcome to B2B UI Components Library!</h3>
-    <h5 style='text-align: right; padding-right: 3em;'>by: j-sparrow</h5>
+    <h3 class='text-center' >Welcome to B2B UI Components Library!</h3>
+    <h5 style='text-align: right; padding-right: 15%;'>by: j-sparrow</h5>
   </div>
 </template>
 
@@ -32,5 +32,9 @@ li {
 
 a {
   color: #42b983;
+}
+
+.text-center {
+  text-align: center;
 }
 </style>
