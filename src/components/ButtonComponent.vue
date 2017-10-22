@@ -1,5 +1,5 @@
 <template>
-  <button class='b2b-button' v-bind:class='{ enabled: button_attr.enabled, disabled: !button_attr.enabled }' v-on:click='clicked' v-html='button_attr.value'></button>
+  <button class='b2b-button' :class='{ enabled: button_attr.enabled, disabled: !button_attr.enabled }' @click='clicked' v-html='button_attr.value'></button>
 </template>
 
 <script>

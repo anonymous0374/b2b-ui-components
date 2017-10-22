@@ -1,24 +1,24 @@
 Vue.js learning notes -- by j-sparrow, wechat_id: kai_zhou_sg
 
-general concepts:
+````general concepts:````
 
-1 the core of Vue.js, is a template system, that allows developers to 
-declaratively render data to the DOM easily -- in a recative way.
+1 the core of Vue.js, is a template system, that allows developers to declaratively render data to the DOM easily -- in a recative way.
 
-2 component composing allows Vue.js to build large-scale applications.
-  2.1 data v.s. props
-  2.2 props and events
+2 though the core library of vue.js is focused on the view layer only, it's easy to pick up and integrate with other supporting libraries, and modern tools.
 
-3 an vue instance v.s. a component
+3 an vue instance
 
-4 multiple pages application v.s. single page application
+4 a component, components system
+  4.1 a component's lifecycle(hooks)
 
-details
+5 multiple pages application v.s. single page application
+
+````concept details:````
 
 1 template syntax(binding syntax in various scenarios)
   1.1 easy cases are documented on its official website: https://vuejs.org/v2/guide/syntax.html
   1.2 there are tricky scenarios I met, and hereby documented here:
-    (1) a component just render data from INSIDE itself(from the data property), and the data goes to an element's outterHtml within its template:    
+    (1) a component just render data from INSIDE itself(from the data property), and the data goes to an element's outterHtml within its template:
     <template>
       <span>{{ message }}</span>
     </template>
