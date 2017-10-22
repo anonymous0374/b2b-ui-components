@@ -24,6 +24,7 @@ module.exports = {
     border: 1px solid #CCCCCC;
     padding-left: 1em;
     border-radius: 3px;
+    background-color: #FFFFFF;
   }
 
   .b2b-select:hover {
@@ -33,5 +34,5 @@ module.exports = {
   .b2b-select>option {
     height: 30px;
     padding: 2em;
-  }  
+  }
 </style>
