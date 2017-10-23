@@ -10,7 +10,7 @@
     <div class='component text-center'>
       <h4>Input Textboxes</h4>
       <b2b-textbox :txtbox_attr='txtbox_attr'></b2b-textbox>
-      <b2b-button :button_attr="btn3_attr" v-on:clicked='btn3_clicked'></b2b-button>      
+      <b2b-button :button_attr="btn3_attr" v-on:clicked='btn3_clicked'></b2b-button>
     </div>
     <div class='component text-center'>
       <h4>Select</h4>
@@ -23,10 +23,16 @@
       <b2b-pagination :pages_attr='pages_attr'></b2b-pagination>
       <br>
     </div>
-    <div class='component'>
-      <h4 class='text-center'>Item Showcase</h4>
+    <div class='component text-center'>
+      <h4>Item Showcase</h4>
       <div v-for="item in items" class='showcase'>
         <b2b-item-showcase :item_showcase_attr='item.item_showcase_attr'></b2b-item-showcase>
+      </div>
+    </div>
+    <div class='component text-center'>
+      <h4>Multiple Checkbox</h4>
+      <div>
+        <b2b-multi-checkbox :multi_checkbox_attr='multi_checkbox_attr'></b2b-multi-checkbox>
       </div>
     </div>
   </div>
@@ -39,6 +45,7 @@
   import SelectComponent from '@/components/SelectComponent'
   import PaginationComponent from '@/components/PaginationComponent'
   import ItemShowcaseComponent from '@/components/ItemShowcaseComponent'
+  import MultiCheckboxComponent from '@/components/MultiCheckboxComponent'
 
   export default {
     components: {
@@ -47,7 +54,8 @@
       'b2b-textbox': TextboxComponent,
       'b2b-select': SelectComponent,
       'b2b-pagination': PaginationComponent,
-      'b2b-item-showcase': ItemShowcaseComponent
+      'b2b-item-showcase': ItemShowcaseComponent,
+      'b2b-multi-checkbox': MultiCheckboxComponent
     },
     data: function () {
       return {
@@ -123,7 +131,10 @@
           description: 'some brief description',
           price: 'price',
           image_url: require('./assets/items/5.jpg')
-        }}]
+        }}],
+        multi_checkbox_attr: {
+          id: 'checkbox_1'
+        }
       }
     },
     methods: {
