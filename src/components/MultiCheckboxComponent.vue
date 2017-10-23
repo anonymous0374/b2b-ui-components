@@ -1,8 +1,8 @@
 <template>
   <div>
     <!-- j-sparrow: for css cannot effectively style checkboxes, using a label to represent the checkbox instead, reference: http://www.inserthtml.com/2012/06/custom-form-radio-checkbox/-->
-    <input type='checkbox' :id='multi_checkbox_attr.id' class='regular-checkbox' />
-    <label :for='multi_checkbox_attr.id'></label>
+    <input type='checkbox' :id='multi_checkbox_attr.id' class='css-checkbox' />
+    <label :for='multi_checkbox_attr.id' class='css-label'></label>
   </div>
 </template>
 <script>
@@ -15,50 +15,46 @@
   }
 </script>
 <style scoped>
-  label {
-    display: inline;
-  }
-
-  .regular-checkbox {
-    display:  none;
-  }
-
-  .regular-checkbox + label {
-    /* background-color: #CCCCCC; */
-    border: 1px solid #CCCCCC;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
-    padding: 7px;
-    border-radius: 3px;
-    display: inline-block;
-    position: relative;
-  }
-
-  .regular-checkbox + label:active, .regular-checkbox:checked + label:active {
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
-  }
-
-  .regular-checkbox:checked + label {
-    background-color: #4565F7;
-    border: 1px solid #adb8c0;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
-    color: #CCCCCC;
-  }
-
-.regular-checkbox:checked + label:after {
-  content: '\2714';
-  font-size: 14px;
-  position: absolute;
-  top: 0px;
-  left: 3px;
-  color: #CCCCCC;
+input[type=checkbox].css-checkbox {
+  position:absolute;
+  z-index:-1000;
+  left:-1000px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height:1px; width:1px;
+  margin:-1px;
+  padding:0;
+  border:0;
 }
 
-  .checkbox {
-    border:  solid 1px #CCCCCC;
-  }
+/* when the checkbox is NOT checked */
+input[type=checkbox].css-checkbox + label.css-label {
+  padding-left:15px;
+  height:15px;
+  display:inline-block;
+  line-height:15px;
+  background-repeat:no-repeat;
+  background-position: 0 0;
+  font-size:15px;
+  vertical-align:middle;
+  cursor:pointer;
+}
 
-  .checkbox:checked {
-    border-color: #4565F7;
-    color:  #FFFFFF;
-  }
+/* when the checkbox is checked */
+input[type=checkbox].css-checkbox:checked + label.css-label {
+  background-position: 0 -15px;
+}
+
+label.css-label {
+  background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_391ce065f36b1460c4845fa9b5173fba.png);
+  background-size: 15px;
+  border-radius: 3px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 </style>
