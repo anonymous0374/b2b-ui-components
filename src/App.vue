@@ -39,124 +39,124 @@
 </template>
 
 <script>
-  import ButtonComponent from '@/components/ButtonComponent'
-  import SecondaryButtonComponent from '@/components/SecondaryButtonComponent'
-  import TextboxComponent from '@/components/TextboxComponent'
-  import SelectComponent from '@/components/SelectComponent'
-  import PaginationComponent from '@/components/PaginationComponent'
-  import ItemShowcaseComponent from '@/components/ItemShowcaseComponent'
-  import MultiCheckboxComponent from '@/components/MultiCheckboxComponent'
+import ButtonComponent from '@/components/ButtonComponent/ButtonComponent'
+import SecondaryButtonComponent from '@/components/SecondaryButtonComponent/SecondaryButtonComponent'
+import TextboxComponent from '@/components/TextboxComponent/TextboxComponent'
+import SelectComponent from '@/components/SelectComponent/SelectComponent'
+import PaginationComponent from '@/components/PaginationComponent/PaginationComponent'
+import ItemShowcaseComponent from '@/components/ItemShowcaseComponent/ItemShowcaseComponent'
+import MultiCheckboxComponent from '@/components/MultiCheckboxComponent/MultiCheckboxComponent'
 
-  export default {
-    components: {
-      'b2b-button': ButtonComponent,
-      'b2b-secondary-button': SecondaryButtonComponent,
-      'b2b-textbox': TextboxComponent,
-      'b2b-select': SelectComponent,
-      'b2b-pagination': PaginationComponent,
-      'b2b-item-showcase': ItemShowcaseComponent,
-      'b2b-multi-checkbox': MultiCheckboxComponent
-    },
-    data: function () {
-      return {
-        btn1_attr: {
-          enabled: true,
-          value: 'normal'
-        },
-        btn2_attr: {
-          enabled: true,
-          value: 'secondary'
-        },
-        btn3_attr: {
-          enabled: true,
-          value: 'disable'
-        },
-        btn4_attr: {
-          enabled: true,
-          value: 'disable'
-        },
-        txtbox_attr: {
-          disabled: false,
-          placeholder: 'Please input here',
-          text: ''
-        },
-        select_attr: {
-          disabled: false,
-          value: '1',
-          options: [{
-            name: '全部',
-            value: 0
-          }, {
-            name: '待受理',
-            value: 1
-          }, {
-            name: '已取消',
-            value: 2
-          }, {
-            name: '已拒绝',
-            value: 3
-          }, {
-            name: '已完成',
-            value: 4
-          }]
-        },
-        pages_attr: {
-          pages_displayed: 3,
-          records_per_page: 10,
-          current_page_index: 2,
-          total: 5
-        },
-        items: [{item_showcase_attr: {
-          name: 'name1',
-          description: 'some brief description',
-          price: 'price',
-          image_url: require('./assets/items/1.png')
-        }}, {item_showcase_attr: {
-          name: 'name1',
-          description: 'some brief description',
-          price: 'price',
-          image_url: require('./assets/items/2.png')
-        }}, {item_showcase_attr: {
-          name: 'name1',
-          description: 'some brief description',
-          price: 'price',
-          image_url: require('./assets/items/3.jpg')
-        }}, {item_showcase_attr: {
-          name: 'name1',
-          description: 'some brief description',
-          price: 'price',
-          image_url: require('./assets/items/4.jpg')
-        }}, {item_showcase_attr: {
-          name: 'name1',
-          description: 'some brief description',
-          price: 'price',
-          image_url: require('./assets/items/5.jpg')
-        }}],
-        multi_checkbox_attr: {
-          id: 'checkbox_1'
-        }
-      }
-    },
-    methods: {
-      btn1_toggleStatus () {
-        this.btn1_attr.enabled = !this.btn1_attr.enabled
+export default {
+  components: {
+    'b2b-button': ButtonComponent,
+    'b2b-secondary-button': SecondaryButtonComponent,
+    'b2b-textbox': TextboxComponent,
+    'b2b-select': SelectComponent,
+    'b2b-pagination': PaginationComponent,
+    'b2b-item-showcase': ItemShowcaseComponent,
+    'b2b-multi-checkbox': MultiCheckboxComponent
+  },
+  data: function () {
+    return {
+      btn1_attr: {
+        enabled: true,
+        value: 'normal'
       },
-      btn2_toggleStatus () {
-        this.btn2_attr.enabled = !this.btn2_attr.enabled
+      btn2_attr: {
+        enabled: true,
+        value: 'secondary'
       },
-      btn3_clicked () {
-        this.txtbox_attr.disabled = !this.txtbox_attr.disabled
-        this.txtbox_attr.disabled ? this.btn3_attr.value = 'enable' : this.btn3_attr.value = 'disable'
+      btn3_attr: {
+        enabled: true,
+        value: 'disable'
       },
-      btn4_clicked () {
-        this.select_attr.disabled = !this.select_attr.disabled
-        this.txtbox_attr.disabled ? this.btn4_attr.value = 'enable' : this.btn4_attr.value = 'disable'
+      btn4_attr: {
+        enabled: true,
+        value: 'disable'
       },
-      select_change (e, value) {
-        console.log(value)
+      txtbox_attr: {
+        disabled: false,
+        placeholder: 'Please input here',
+        text: ''
+      },
+      select_attr: {
+        disabled: false,
+        value: '1',
+        options: [{
+          name: '全部',
+          value: 0
+        }, {
+          name: '待受理',
+          value: 1
+        }, {
+          name: '已取消',
+          value: 2
+        }, {
+          name: '已拒绝',
+          value: 3
+        }, {
+          name: '已完成',
+          value: 4
+        }]
+      },
+      pages_attr: {
+        pages_displayed: 3,
+        records_per_page: 10,
+        current_page_index: 2,
+        total: 5
+      },
+      items: [{item_showcase_attr: {
+        name: 'name1',
+        description: 'some brief description',
+        price: 'price',
+        image_url: require('./assets/items/1.png')
+      }}, {item_showcase_attr: {
+        name: 'name1',
+        description: 'some brief description',
+        price: 'price',
+        image_url: require('./assets/items/2.png')
+      }}, {item_showcase_attr: {
+        name: 'name1',
+        description: 'some brief description',
+        price: 'price',
+        image_url: require('./assets/items/3.jpg')
+      }}, {item_showcase_attr: {
+        name: 'name1',
+        description: 'some brief description',
+        price: 'price',
+        image_url: require('./assets/items/4.jpg')
+      }}, {item_showcase_attr: {
+        name: 'name1',
+        description: 'some brief description',
+        price: 'price',
+        image_url: require('./assets/items/5.jpg')
+      }}],
+      multi_checkbox_attr: {
+        id: 'checkbox_1'
       }
     }
+  },
+  methods: {
+    btn1_toggleStatus () {
+      this.btn1_attr.enabled = !this.btn1_attr.enabled
+    },
+    btn2_toggleStatus () {
+      this.btn2_attr.enabled = !this.btn2_attr.enabled
+    },
+    btn3_clicked () {
+      this.txtbox_attr.disabled = !this.txtbox_attr.disabled
+      this.txtbox_attr.disabled ? this.btn3_attr.value = 'enable' : this.btn3_attr.value = 'disable'
+    },
+    btn4_clicked () {
+      this.select_attr.disabled = !this.select_attr.disabled
+      this.txtbox_attr.disabled ? this.btn4_attr.value = 'enable' : this.btn4_attr.value = 'disable'
+    },
+    select_change (e, value) {
+      console.log(value)
+    }
   }
+}
 </script>
 
 <style>

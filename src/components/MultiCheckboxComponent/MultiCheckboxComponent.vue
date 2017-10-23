@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- j-sparrow: for css cannot effectively style checkboxes, using a label to represent the checkbox instead, reference: http://www.inserthtml.com/2012/06/custom-form-radio-checkbox/-->
-    <input type='checkbox' :id='multi_checkbox_attr.id' class='css-checkbox' />
+    <input type='checkbox' :id='multi_checkbox_attr.id' class='css-checkbox' :class='{"unchecked": multi_checkbox_attr.unchecked, "checked": multi_checkbox_attr.checked, "disabled": multi_checkbox_attr.disabled, "half-checked": multi_checkbox_attr.intermediate}'/>
     <label :for='multi_checkbox_attr.id' class='css-label'></label>
   </div>
 </template>
@@ -14,6 +14,7 @@
     }
   }
 </script>
+
 <style scoped>
 input[type=checkbox].css-checkbox {
   position:absolute;
@@ -46,7 +47,7 @@ input[type=checkbox].css-checkbox:checked + label.css-label {
 }
 
 label.css-label {
-  background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_391ce065f36b1460c4845fa9b5173fba.png);
+  /*background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_391ce065f36b1460c4845fa9b5173fba.png);*/
   background-size: 15px;
   border-radius: 3px;
   -webkit-touch-callout: none;
@@ -55,6 +56,10 @@ label.css-label {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+label.css-label. {
+
 }
 
 </style>

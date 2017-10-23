@@ -6,12 +6,12 @@
 </template>
 
 <script>
-  export default {
-    name: 'WelcomeComponent',
-    data () {
-      return {}
-    }
+export default {
+  name: 'WelcomeComponent',
+  data () {
+    return {}
   }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
