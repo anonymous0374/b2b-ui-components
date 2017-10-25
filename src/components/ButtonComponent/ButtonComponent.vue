@@ -1,11 +1,39 @@
 <template>
-  <button class='b2b-button' :class='{ enabled: button_attr.enabled, disabled: !button_attr.enabled }' @click='clicked' v-html='button_attr.value'></button>
+  <button
+  :class='classObject'
+  @click='clicked'
+  v-html='button_attr.value'></button>
 </template>
 
 <script>
+  // import 'kimi_button'
+  import 'kimi-button'
+
   export default {
     name: 'b2b-button',
-    props: ['button_attr'],
+    props: {
+      'button_attr': {
+        type: Object,
+        required: true,
+        validator: function () {
+          // some logic to validate this property field
+          return true
+        }
+      }
+    },
+    computed: {
+      classObject: function () {
+        return {
+          // 'b2b-button': true,
+          'ui-button-morange': true,
+          enabled: this.button_attr.enabled,
+          disabled: !this.button_attr.enabled
+        }
+      }
+    },
+    data: function () {
+      return {}
+    },
     methods: {
       disable: function () {
         this.button_attr.enabled = false

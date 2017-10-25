@@ -11,6 +11,11 @@
     "lint": "eslint --fix --ext .js,.vue src"
   },
   "dependencies": {
+    "kimi-base": "^1.0.1",
+    "kimi-button": "^1.0.2",
+    "kimi-dialog": "^1.0.2",
+    "kimi-form": "^1.0.1",
+    "kimi-table": "^1.0.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
