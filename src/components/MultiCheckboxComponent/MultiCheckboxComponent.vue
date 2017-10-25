@@ -1,5 +1,6 @@
 <template>
   <div>
+    <link type='' href='' />
     <!-- j-sparrow: for css cannot effectively style checkboxes, using a label to represent the checkbox instead, reference: http://www.inserthtml.com/2012/06/custom-form-radio-checkbox/-->
     <input type='checkbox' :id='multi_checkbox_attr.id' class='css-checkbox' :class='{"unchecked": multi_checkbox_attr.unchecked, "checked": multi_checkbox_attr.checked, "disabled": multi_checkbox_attr.disabled, "half-checked": multi_checkbox_attr.intermediate}'/>
     <label :for='multi_checkbox_attr.id' class='css-label'></label>
